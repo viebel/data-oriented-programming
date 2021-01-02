@@ -1,0 +1,18 @@
+[
+    {
+        "title": "The world as I see it",
+        "authors": [
+            {
+                "fullName": "Albert Einstein"
+            }
+        ]
+    },
+    {
+        "title": "The Stranger",
+        "authors": [
+            {
+                "fullName": "Albert Camus"
+            }
+        ]
+    }
+]
