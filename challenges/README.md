@@ -1,4 +1,43 @@
+According to Data-Oriented programming, the way to reduce complexity of information systems is to follow three basic principles:
+
+
+1. Separate code from data
+1. Keep data immutable
+1. Represent data with generic data structures
+
+
+Here are a series of 6 short programming challenges and their solutions written in JavaScript according to the principles of Data-Oriented programming. The purpose is to illustrate the simplicity of Data-Oriented programming. 
+
+
+If you agree with DOP principles, please implement your solutions in the programming language of your choice, according to DOP principles. I'm sure you'll enjoy!
+
+If you disagree with one or more DOP principles, feel free to implement the solutions by breaking one or more principles, and explain why you think that your solution is simpler than the ones that I wrote.
+
+
+# Rules
+
+1. You are allowed to choose any programming language
+1. You are allowed to use any third-party library
+1. You are allowed to use reflection
+1. In the context of the challenges, simplicity is more important than performances.
+1. Submit your code snippets as a pull request to the official book source code [Github repository](https://github.com/viebel/data-oriented-programming), under the `challenges` folder
+1. In case you disagree with DOP, please add a few words as comments in your code that explain why you think that your solution is simpler than the ones that I wrote.
+1. Four copies of [Data-Oriented programming](https://www.manning.com/books/data-oriented-programming?utm_source=viebel&utm_medium=affiliate&utm_campaign=book_sharvit2_data_1_29_21&a_aid=viebel&a_bid=d5b546b7) will be given away among the folks that submitted a correct solution to at least 4 of the challenges.
+
+
+
 # Data model
+
+Here is the library data model in an informal way:
+
+![mindmap](/assets/lms-data-mindmap.png)
+
+More formally, here is a UML diagram that describes the relationships between the data entities of the library:
+
+![diagram](/assets/lms-data-diagram.png)
+
+Here is an example of library data in JavaScript that we are going to use through this article:
+
 
 ~~~js
 var libraryData = {
