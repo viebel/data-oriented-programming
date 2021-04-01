@@ -30,11 +30,11 @@ If you disagree with one or more DOP principles, feel free to implement the solu
 
 Here is the library data model in an informal way:
 
-![mindmap](/assets/lms-data-mindmap.png)
+![mindmap](./lms-data-mindmap.png)
 
 More formally, here is a UML diagram that describes the relationships between the data entities of the library:
 
-![diagram](/assets/lms-data-diagram.png)
+![diagram](./lms-data-diagram.png)
 
 Here is an example of library data in JavaScript that we are going to use through this article:
 
