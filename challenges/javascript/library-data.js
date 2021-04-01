@@ -13,12 +13,10 @@ var libraryData = {
                     {
                         "id": "book-item-1",
                         "rackId": "rack-17",
-                        "isLent": true
                     },
                     {
                         "id": "book-item-2",
                         "rackId": "rack-17",
-                        "isLent": false
                     }
                 ]
             }
@@ -46,13 +44,6 @@ var libraryData = {
         "email": "samantha@gmail.com",
         "encryptedPassword": "c2VjcmV0",
         "isBlocked": false,
-        "bookLendings": [
-          {
-            "bookItemId": "book-item-1",
-            "bookIsbn": "978-1779501127",
-            "lendingDate": "2020-04-23"
-          }
-        ]
       }
     }
   }
