@@ -13,16 +13,17 @@ function bookInfo(catalogData, book) {
   };
 }
 
-function searchBooksByTitle(query) {
+function searchBooksByTitle(libraryData, query) {
   var catalogData = _.get(libraryData, "catalog");
   var allBooks = _.get(catalogData, "booksByIsbn");
   var matchingBooks = _.filter(allBooks, function(book) { 
     return _.get(book, "title").toLowerCase()
       .includes(query.toLowerCase());
   });
-  return _.map(matchingBooks, function(book) {
+  return JSON.stringify(_.map(matchingBooks, function(book) {
     return bookInfo(catalogData, book);
-  });
+  }));
 }
 
-JSON.stringify(searchBooksByTitle("watCH"));
+searchBooksByTitle(libraryData, "watCH");
+
