@@ -7,7 +7,7 @@ defmodule SearchBook do
   ## Examples
 
       iex> SearchBook.search_books_by_title(LibraryData.library_data(), "watCH")
-      [~s({\"authorNames\":[\"Alan Moore\",\"Dave Gibbons\"],\"isbn\":\"978-1779501127\",\"title\":\"Watchmen\"})]
+      ~s([{\"authorNames\":[\"Alan Moore\",\"Dave Gibbons\"],\"isbn\":\"978-1779501127\",\"title\":\"Watchmen\"}])
   """
   def search_books_by_title(library_data, query) do
     catalog_data = library_data["catalog"]
@@ -19,7 +19,8 @@ defmodule SearchBook do
       |> String.downcase()
       |> String.contains?(String.downcase(query))
     end)
-    |> Enum.map(fn {_, book} -> Jason.encode!(book_info(catalog_data, book)) end)
+    |> Enum.map(fn {_, book} -> book_info(catalog_data, book) end)
+    |> Jason.encode!()
   end
 
   defp author_names(catalog_data, book) do
