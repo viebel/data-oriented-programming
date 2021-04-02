@@ -1,21 +1,15 @@
-# Elixir
+# Elixir DOP-Challenges
 
-**TODO: Add description**
+[Elixir](https://elixir-lang.org) solutions for the [DOP-Challenges](https://blog.klipse.tech/dop/2021/04/01/dop-challenges.html).
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `elixir` to your list of dependencies in `mix.exs`:
+[Install elixir](https://elixir-lang.org/install.html)
 
-```elixir
-def deps do
-  [
-    {:elixir, "~> 0.1.0"}
-  ]
-end
-```
+run `mix deps.get`.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/elixir](https://hexdocs.pm/elixir).
+## Tests
 
+There are [doctests](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html) written for all the modules.
+
+run `mix test` to run the whole test suite.
