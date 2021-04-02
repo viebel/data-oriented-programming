@@ -1,4 +1,3 @@
-require 'pp'
 load 'library-data.rb'
 
 def diff(data1, data2)
@@ -12,8 +11,7 @@ def diff(data1, data2)
   end
 end
 
-updated_library_data = $library_data.deep_copy
-updated_library_data['userManagement']['members']['samantha@gmail.com']['isBlocked'] = true
+updated_library_data = $library_data.set_in(['userManagement', 'members', 'samantha@gmail.com', 'isBlocked'], true)
 
 pp diff($library_data, updated_library_data)
 pp diff($library_data, $library_data)

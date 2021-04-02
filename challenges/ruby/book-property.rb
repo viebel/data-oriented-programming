@@ -1,4 +1,3 @@
-require 'pp'
 load 'library-data.rb'
 
 def get_book_property(library_data, isbn, field_name)

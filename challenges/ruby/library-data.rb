@@ -1,7 +1,45 @@
-class Hash
-  def deep_copy
-    Marshal.load(Marshal.dump(self))
+require 'json'
+require 'pp'
+
+# Hacking in "real" immutable data
+class Object
+  def immutable!
+    self.freeze
   end
+end
+
+module Enumerable
+  def immutable!
+    self.each do |x|
+      freeze = x.is_a?(Enumerable) ? :immutable! : :freeze
+      x.send(freeze)
+    end.freeze
+  end
+end
+
+# Adds structural sharing support to Arrays and Hashes
+class Array
+ def set(key, value)
+   self.dup.tap { |dup| dup[key] = value }
+ end
+
+ def set_in((k, *rest_of_path), v)
+   modified_node = v
+   modified_node = self[k].set_in(rest_of_path, v) unless rest_of_path.empty?
+   set(k, modified_node)
+ end
+end
+
+class Hash
+ def set(key, value)
+   self.dup.tap { |dup| dup[key] = value }
+ end
+
+ def set_in((k, *rest_of_path), v)
+   modified_node = v
+   modified_node = self[k].set_in(rest_of_path, v) unless rest_of_path.empty?
+   set(k, modified_node)
+ end
 end
 
 $library_data = {
@@ -53,4 +91,4 @@ $library_data = {
       }
     }
   }
-}
+}.immutable!

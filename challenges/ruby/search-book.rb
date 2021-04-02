@@ -1,5 +1,3 @@
-require 'json'
-require 'pp'
 load 'library-data.rb'
 
 def author_names(catalog_data, book)

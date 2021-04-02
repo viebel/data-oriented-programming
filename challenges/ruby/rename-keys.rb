@@ -1,12 +1,10 @@
-require 'pp'
 load 'library-data.rb'
 
 def rename_keys(map, key_map)
-  key_map.reduce(map.deep_copy) do |result, (old_key, new_key)|
-    value = map[old_key]
-    result[new_key] = value
-    result.reject { |k, _| k == old_key }
-  end
+  new_map = map.transform_keys(key_map)
+  map
+    .merge(new_map)
+    .reject { |k, _| key_map.keys.include?(k) }
 end
 
 alan_moore = {
