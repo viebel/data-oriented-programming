@@ -1,6 +1,6 @@
 defmodule MergeAndSerialize do
   @doc """
-  A function named mergeAndSerialize that receives two pieces of book information one from the database
+  A function that receives two pieces of book information one from the database
   and one from an external service like [Open Library Books API](https://openlibrary.org/dev/docs/api/books)
   and returns a JSON string with information from both sources.
 
