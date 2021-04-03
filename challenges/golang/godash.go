@@ -56,28 +56,20 @@ func _set(data, sel, v any) any {
 		return ret
 	}
 
-	mdata := _cloneDeep(data).(d)
-
 	if k, ok := sel.(string); ok {
+		mdata := _clone(data).(d)
 		mdata[k] = v
 		return mdata
 	}
 
 	path := sel.(p)
-	lpath := len(path)
-	cur := mdata
 
-	for i, k := range path {
-		if dd, ok := cur[k].(d); ok {
-			cur = dd
-		} else if i == lpath-1 {
-			cur[k] = v
-		} else {
-			panic("invalid value for " + k)
-		}
+	k := path[0]
+	if len(path) > 1 {
+		v = _set(data.(d)[k], path[1:], v)
 	}
 
-	return mdata
+	return _set(data, k, v)
 }
 
 func _omit(data, sel any) any {
@@ -213,6 +205,18 @@ func _reduce(in any, f reducer, acc any) any {
 	}
 
 	return acc
+}
+
+func _clone(v any) any {
+	if d, ok := v.(d); ok {
+		return clonemap(d, false)
+	}
+
+	if l, ok := v.(l); ok {
+		return cloneslice(l, false)
+	}
+
+	return v
 }
 
 func _cloneDeep(v any) any {
