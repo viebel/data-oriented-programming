@@ -1,0 +1,42 @@
+{
+  "name": "data-oriented-programming-book-experiments",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "shybyte@users.noreply.github.com",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "tsc:watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.21",
+    "@types/lodash": "^4.14.168",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@types/deep-freeze": "^0.1.2",
+    "deep-freeze": "^0.0.1",
+    "fp-ts": "^2.9.5",
+    "immer": "^9.0.1",
+    "lodash": "^4.17.21",
+    "monocle-ts": "^2.3.9"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "rootDir": ".",
+    "testRegex": "test/*.ts$",
+    "transform": {
+      "^.+\\.(t|j)s(x?)$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
