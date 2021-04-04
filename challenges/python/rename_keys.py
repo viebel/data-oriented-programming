@@ -1,14 +1,9 @@
-import copy
-
 def rename_keys(m, key_map):
     return {key_to_use(key_map, k): v for (k, v) in m.items()}
 
 
 def key_to_use(key_map, k):
-    if k in key_map:
-        return key_map[k]
-    else:
-        return k
+    return key_map[k] if k in key_map else k
 
 
 def show(original, updated):
