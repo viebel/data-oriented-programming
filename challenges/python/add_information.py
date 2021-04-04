@@ -1,10 +1,14 @@
-import copy
-
 def block_member(library_data, email):
-    data = copy.deepcopy(library_data)
-    data['userManagement']['members'][email]['isBlocked'] = True
+    return __set_in(
+            library_data,
+            ['userManagement', 'members', email, 'isBlocked'],
+            True)
 
-    return data
+
+def __set_in(m, ks, v):
+    updated_m = m.copy()
+    updated_m[ks[0]] = v if len(ks) == 1 else __set_in(m[ks[0]], ks[1:], v)
+    return updated_m
 
 
 def is_blocked(data, email):
