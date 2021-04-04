@@ -1,11 +1,18 @@
-import copy
 import json
 
+from compare_data import is_not_container
+
 def merge(m1, m2):
-    m3 = copy.deepcopy(m1)
+    if is_not_container(m2):
+        return m2
+
+    m3 = m1.copy()
 
     for k, v in m2.items():
-        m3[k] = v
+        if k not in m3:
+            m3[k] = v
+        else:
+            m3[k] = merge(m3[k], m2[k])
 
     return m3
 
@@ -61,3 +68,17 @@ if __name__ == '__main__':
 
 
     print(merge_and_serialize(watchmen_from_DB, watchmen_from_openlib))
+
+    m1 = {
+            'a': {
+                'b': 1,
+                'c': {
+                    'd': 2,
+                    'e': {'f': 3}}}}
+    m2 = {
+            'a': {
+                'c': {
+                    'd': 4,
+                    'e': 5}}}
+
+    print(merge(m1, m2))
