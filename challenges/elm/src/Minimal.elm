@@ -18,16 +18,15 @@ getProperty =
 {-| #2
 No way to shorten while keeping the readability.
 -}
-bookInfo : JsonValue -> JsonValue -> Result String String
+bookInfo : JsonValue -> JsonValue -> Result String JsonValue
 bookInfo book catalogData =
     Result.map3
         (\title isbn authors ->
-            [ ( "title", Json.Encode.string title )
-            , ( "isbn", Json.Encode.string isbn )
-            , ( "authorNames", Json.Encode.list Json.Encode.string authors )
-            ]
-                |> Json.Encode.object
-                |> Json.Encode.encode 0
+            ObjectValue
+                [ ( "title", StringValue title )
+                , ( "isbn", StringValue isbn )
+                , ( "authorNames", ArrayValue (List.map StringValue authors) )
+                ]
         )
         -- get the title and convert to a String
         (Json.Value.getIn [ "title" ] book |> Result.andThen jsonToString)
