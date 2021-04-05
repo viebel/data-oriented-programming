@@ -78,7 +78,7 @@ jsonToArray json =
 -}
 blockMember : String -> JsonValue -> Result String JsonValue
 blockMember email =
-    Json.Value.setIn [ email ] (BoolValue True)
+    Json.Value.setIn [ "userManagement", "members", email, "isBlocked" ] (BoolValue True)
 
 
 {-| #4 Rename keys in a data entity

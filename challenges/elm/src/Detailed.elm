@@ -109,7 +109,7 @@ authorNames book catalogData =
 -}
 blockMember : String -> JsonValue -> Result String JsonValue
 blockMember email libraryData =
-    Json.Value.setIn [ email ] (BoolValue True) libraryData
+    Json.Value.setIn [ "userManagement", "members", email, "isBlocked" ] (BoolValue True) libraryData
 
 
 {-| #4 Rename keys in a data entity
