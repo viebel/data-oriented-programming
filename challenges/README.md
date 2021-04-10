@@ -54,11 +54,11 @@ var libraryData = {
                 "bookItems": [
                     {
                         "id": "book-item-1",
-                        "rackId": "rack-17",
+                        "rackId": "rack-17"
                     },
                     {
                         "id": "book-item-2",
-                        "rackId": "rack-17",
+                        "rackId": "rack-17"
                     }
                 ]
             }
@@ -85,7 +85,7 @@ var libraryData = {
       "samantha@gmail.com": {
         "email": "samantha@gmail.com",
         "encryptedPassword": "c2VjcmV0",
-        "isBlocked": false,
+        "isBlocked": false
       }
     }
   }
