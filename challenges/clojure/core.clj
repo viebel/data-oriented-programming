@@ -3,11 +3,6 @@
             [clojure.data.json :as json]
             [clojure.data :as data]))
 
-;; Note: The JSON Supplied at
-;; https://github.com/viebel/data-oriented-programming/tree/main/challenges
-;; has extraneous commas (e.g. after "rack-17") and won't parse
-;; with clojure.data.json/read-str unless they were removed.
-
 (def ld (json/read-str (slurp "libdata.json")))
 
 ;; Warm up
