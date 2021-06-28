@@ -1,0 +1,1 @@
+_.merge(dataFromDb, dataFromOpenLib);

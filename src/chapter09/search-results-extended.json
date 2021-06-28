@@ -1,0 +1,15 @@
+[
+  {
+    "isbn": "978-1982137274",
+    "title": "7 Habits of Highly Effective People",
+    "authorNames": [
+      "Sean Covey",
+      "Stephen Covey"
+    ]
+  },
+  {
+    "isbn": "978-0812981605",
+    "title": "The Power of Habit",
+    "authorNames": ["Charles Duhigg"]
+  }
+]
