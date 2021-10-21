@@ -9,9 +9,12 @@
 // the "//>" comments have no meaning and only contain the command line
 // used for evaluation.
 
-import "strings"
+import (
+    "encoding/json"
+    "strings"
+)
 
-data: {
+let data = {
     name:    "The smallest library on earth"
     address: "Here and now"
     catalog: {
@@ -87,7 +90,7 @@ challenge1: (#getBookProperty & {isbn: "978-1779501127", field: "title"}).result
     ]
 }
 
-challenge2: (#bookInfo & {query: "watCH"}).result
+challenge2: json.Compact(json.Marshal((#bookInfo & {query: "watCH"}).result))
 
 //> cue eval -e challenge3 challenges.cue
 #blockMember: {
@@ -110,27 +113,73 @@ challenge2: (#bookInfo & {query: "watCH"}).result
     }
 }
 
-challenge3: (#blockMember & {email: "samantha@gmail.com"}).result.userManagement.members."samantha@gmail.com".isBlocked
+challenge3: {
+    let result = (#blockMember & {email: "samantha@gmail.com"}).result
+    before: data.userManagement.members."samantha@gmail.com".isBlocked
+    after: result.userManagement.members."samantha@gmail.com".isBlocked
+}
 
 //> cue eval -e challenge4 challenges.cue
 #renameKeys: {
-    src: {string: _}
-    keyMap: {string: string}
+    src: [string]: _
+    keyMap: [string]: string
     result: {for k, v in src {"\(*keyMap[k] | k)": v}}
 }
 
-// work in progress
+challenge4: {
+    let alanMoore = {
+        "name": "Alan Moore",
+        "bookIsbns": ["978-1779501127"]
+    }
+    let bookItem = {
+        "id": "book-item-1",
+        "rackId": "rack-17",
+        "isLent": true
+    }
+    testAuthor: (#renameKeys & {src: alanMoore, keyMap: {"bookIsbns": "books"}}).result,
+    // for testBook, the website omits the new id for me. Looks like a bug.
+    // cue does alright, here.
+    testBook: (#renameKeys & {src: bookItem, keyMap: {"rackId": "id", "id": "bookItemId"}}).result,
+}
 
-//challenge4: {
-//    #alanMoore = {
-//        "name": "Alan Moore",
-//        "bookIsbns": ["978-1779501127"]
-//    }
-//    #bookItem = {
-//        "id": "book-item-1",
-//        "rackId": "rack-17",
-//        "isLent": true
-//    }
-//    testAuthor: (#renameKeys & {src: #alanMoore, keyMap: {"bookIsbns": "books"}}).result,
-//    testBook: (#renameKeys & {src: #bookItem, keyMap: {"rackId": "id", "id": "bookItemId"}}).result,
-//}
+//> cue eval -e challenge5 challenges.cue
+let watchmenFromDB = {
+    isbn:            "978-1779501127"
+    title:           "Watchmen"
+    publicationYear: 1987
+    authorIds: ["alan-moore", "dave-gibbons"]
+    bookItems: [{
+        id:     "book-item-1"
+        rackId: "rack-17"
+        isLent: true
+    }, {
+        id:     "book-item-2"
+        rackId: "rack-17"
+        isLent: false
+    }]
+}
+
+let watchmenFromOpenLib = {
+    publishers: ["DC Comics"]
+    number_of_pages: 334
+    weight:          "1.4 pounds"
+    physical_format: "Paperback"
+    subjects: ["Graphic Novels", "Comics & Graphic Novels", "Fiction", "Fantastic fiction"]
+    isbn_13: ["9780930289232"]
+    title: "Watchmen"
+    isbn_10: ["0930289234"]
+    publish_date:        "April 1, 1995"
+    physical_dimensions: "10.1 x 6.6 x 0.8 inches"
+}
+
+// question: how should this usually work in DOP if both have the same keys?
+// it looks a bit happy-path centric to me. The other challenges, too
+challenge5: json.Compact(json.Marshal({watchmenFromDB, watchmenFromOpenLib}))
+
+//> cue eval -e challenge6 challenges.cue
+
+challenge6: {
+    // taken from challenge 3
+    let updatedLibrary = (#blockMember & {email: "samantha@gmail.com"}).result
+    // work in progress...
+}
