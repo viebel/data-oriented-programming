@@ -7,7 +7,7 @@ class AuthorData {
 }
 
 class NameCalculation {
-    static fullName() {
+    static fullName(data) {
         return data.firstName + " " + data.lastName;
     }
 }
@@ -16,7 +16,7 @@ class UserData {
     constructor(firstName, lastName, email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.books = email;
+        this.email = email;
     }
 }
 

@@ -1,0 +1,35 @@
+@startuml
+
+Entity1     *--  Entity2
+Entity1     *--  Entity4
+
+Entity2        *-- Entity3
+
+
+class Entity1 {
+  + booksByIsbn: {Entity2}
+  + authorsById: {Entity4}
+}
+
+class Entity2 {
+  + title : String
+  + publicationYear: Number
+  + isbn: String
+  + authorIds: [String]
+  + bookItems: [Entity3]
+}
+
+class Entity3 {
+  + id: String
+  + libId: String
+  + purchaseDate: String
+  + isLent: Boolean
+}
+
+class Entity4 {
+  + id: String
+  + name: String
+  + bookIsbns: [String]
+}
+
+@enduml

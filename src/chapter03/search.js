@@ -11,7 +11,7 @@ class Catalog {
         var bookInfo =  {
             "title": _.get(book, "title"),
             "isbn": _.get(book, "isbn"),
-            "authorNames": authorNames(catalogData, book)
+            "authorNames": Catalog.authorNames(catalogData, book)
         }; // <2>
         return bookInfo;
     }

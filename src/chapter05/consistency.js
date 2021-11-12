@@ -3,7 +3,7 @@ class SystemConsistency {
         var previousToCurrent = DataDiff.diff(previous, current);
         var previousToNext = DataDiff.diff(previous, next);
         if(DataDiff.isEmptyIntersection(previousToCurrent, previousToNext)) {
-            return _.merge(current, previousToNext);
+            return DataDiff.patch(current, previousToNext);
         }
         throw "Conflicting concurrent mutations.";
     }

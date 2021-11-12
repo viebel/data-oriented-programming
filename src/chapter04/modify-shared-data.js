@@ -4,6 +4,6 @@ var member = {
     "isBlocked": true
 }
 
-var nextMember = _.set(member, "password", "hidden");
+var updatedMember = _.set(member, "password", "hidden");
 
 member["isBlocked"] = false;

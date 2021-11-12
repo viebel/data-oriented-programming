@@ -1,0 +1,20 @@
+[
+  {
+    "myNumber": 42,
+    "myString": "Hello",
+    "myEnum": "myVal",
+    "myBool": true,
+    "myTuple": ["Hello", 42]
+  },
+  {
+    "myNumber": 54,
+    "myString": "Happy",
+    "myAge": 42,
+    "myBirthday": "1978-11-23",
+    "myLetters": "I-love-you",
+    "myNumberMap": {
+      "banana": 23,
+      "apple": 34
+    }
+  }
+]

@@ -1,16 +1,10 @@
-class Catalog {
-  static authorNames(catalogData, authorIds) {
-    return authorIds.map(function(authorId) {
-      return catalogData.getIn(["authorsById", authorId, "name"]);
-    });
-  }
-
-  static bookInfo(catalogData, book) {
-    var bookInfo =  Immutable.Map({
-      "title": book.get("title"),
-      "isbn": book.get("isbn"),
-      "authorNames": Catalog.authorNames(catalogData, book.get("authorIds"))
-    });
-    return bookInfo;
+class OpenLibraryDataSource {
+  static rawBookInfo(isbn) {
+    var url = `https://openlibrary.org/isbn/${isbn}.json`;
+    var jsonString = fetchResponseBody(url);
+    var bookInfo = JSON.parse(jsonString);
+    if(!valid(bookInfo, bookInfoSchema)) {
+      throw "Invalid book info";
+    }
   }
 }

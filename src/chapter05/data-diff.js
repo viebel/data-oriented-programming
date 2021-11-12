@@ -13,7 +13,7 @@ class DataDiff {
                                (res == "data-diff:no-diff")) {
                                 return acc;
                             }
-                            return _.set(acc, k, res);
+                            return _.set(acc, [k], res);
                         },
                         emptyObject);
     }
@@ -28,13 +28,17 @@ class DataDiff {
         return "data-diff:no-diff";
     }
 
+    static patch(data, diff) {
+        return _.merge(data, diff);
+    }
+
     static leaves(obj, prefix = '') {
         return _.reduce(obj,
                         function(acc, v, k) {
                             if (_.isObject(v)) {
                                 return _.concat(acc,
                                                 DataDiff.leaves(v,
-                                                                prefix + k + "."))
+                                                                prefix + k + "."));
                             }
                             return _.concat(acc, [prefix + k]);
                         },

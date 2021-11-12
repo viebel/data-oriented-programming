@@ -1,4 +1,5 @@
 var myData = {num: 42};
-setTimeout(function(data){
+setTimeout(function (data){
     console.log(data.num);
-}, 1000, myData)
+}, 1000, myData);
+myData.num = 0;

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": ["firstName", "lastName"],
+  "properties": {
+    "firstName": {"type": "string"},
+    "lastName": {"type": "string"},
+    "bookList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string"},
+          "publicationYear": {"type": "integer"}
+        }
+      }
+    }
+  }
+}

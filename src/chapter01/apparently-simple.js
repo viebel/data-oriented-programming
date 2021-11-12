@@ -1,5 +1,5 @@
 class Member {
-    isBlocked = false;
+    isBlocked;
 
     displayBlockedStatusTwice() {
         console.log(this.isBlocked);
@@ -7,5 +7,4 @@ class Member {
     }
 }
 
-var member = new Member();
 member.displayBlockedStatusTwice();

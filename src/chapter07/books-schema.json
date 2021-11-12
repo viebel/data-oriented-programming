@@ -1,0 +1,12 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["title", "isbn", "available"],
+    "properties": {
+      "title": {"type": "string"},
+      "available": {"type": "boolean"},
+      "isbn": {"type": "string"}
+    }
+  }
+}

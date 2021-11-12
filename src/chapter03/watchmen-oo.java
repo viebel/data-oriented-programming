@@ -16,11 +16,11 @@ class Book {
 
 class BookItem {
     public String id;
-    public String rackId;
+    public String libId;
     public Boolean  isLent;
-    constructor(String id, String rackId, Boolean isLent) {
+    constructor(String id, String libId, Boolean isLent) {
         this.id = id;
-        this.rackId = rackId;
+        this.libId = libId;
         this.isLent = isLent;
     }
 }
@@ -29,5 +29,5 @@ Book watchmenBook = new Book("978-1779501127",
                              "Watchmen",
                              1987,
                              ["alan-moore", "dave-gibbons"],
-                             [new BookItem("book-item-1", "rack-17", true),
-                              new BookItem("book-item-2", "rack-17", false)]);
+                             [new BookItem("book-item-1", "nyc-central-lib", true),
+                              new BookItem("book-item-2", "nyc-central-lib", false)]);

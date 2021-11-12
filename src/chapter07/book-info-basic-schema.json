@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "required": ["title"],
+  "properties": {
+    "title": {"type": "string"},
+    "publishers": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "number_of_pages": {"type": "integer"},
+    "weight": {"type": "string"},
+    "physical_format": {"type": "string"},
+    "subjects": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "isbn_13": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "isbn_10": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "publish_date": {"type": "string"},
+    "physical_dimensions": {"type": "string"}
+  }
+}

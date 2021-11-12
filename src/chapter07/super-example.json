@@ -1,0 +1,12 @@
+[
+  { // <1>
+    "myNumber": 42,
+    "myString": "Hello",
+    "myEnum": "myVal",
+    "myBool": true
+  },
+  { // <2>
+    "myNumber": 54,
+    "myString": "Happy"
+  }
+]

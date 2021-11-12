@@ -6,12 +6,12 @@ Map watchmen = Map.of(
                       "bookItems", List.of(
                                            Map.of(
                                                   "id", "book-item-1",
-                                                  "rackId", "rack-17",
+                                                  "libId", "nyc-central-lib",
                                                   "isLent", true
                                                   ),
                                            Map.of (
                                                    "id", "book-item-2",
-                                                   "rackId", "rack-17",
+                                                   "libId", "nyc-central-lib",
                                                    "isLent", false
                                                    )
                                            )

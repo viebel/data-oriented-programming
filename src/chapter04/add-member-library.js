@@ -3,4 +3,4 @@ Library.addMember = function(library, member) {
     var nextUserManagement = UserManagement.addMember(currentUserManagement, member);
     var nextLibrary = _.set(library, "userManagement", nextUserManagement);
     return nextLibrary;
-}
+};

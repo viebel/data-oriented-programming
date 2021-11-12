@@ -1,11 +1,11 @@
-class CatalogDB {
-  static addMember(member) {
-    var addMemberQuery = `INSERT
-                          INTO members
-                               (email, encrypted_password)
-                          VALUES ($1, $2)`;
-    dbClient.query(addMemberQuery,
-                   _.at(member, ["email",
-                                 "encryptedPassword"]));
-  }
-}
+UserManagement.addMember = function(userManagement, member) {
+    var email = Immutable.get(member, "email");
+    var infoPath = ["membersByEmail", email];
+    if(Immutable.hasIn(userManagement, infoPath)) {
+        throw "Member already exists.";
+    }
+    var nextUserManagement =  Immutable.setIn(userManagement,
+                                              infoPath,
+                                              member);
+    return nextUserManagement;
+};

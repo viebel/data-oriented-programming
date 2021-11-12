@@ -1,0 +1,14 @@
+{
+  "type": "array", // <1>
+  "items": {
+    "type": "object", // <2>
+    "properties": { // <3>
+      "myNumber": {"type": "number"}, // <4>
+      "myString": {"type": "string"}, // <5>
+      "myEnum": {"enum": ["myVal", "yourVal"]}, // <6>
+      "myBool": {"type": "boolean"} // <7>
+    },
+    "required": ["myNumber", "myString"], // <8>
+    "additionalProperties": false // <9>
+  }
+}

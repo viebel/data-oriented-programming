@@ -10,7 +10,7 @@ _.get(SystemConsistency.reconcile(current, previous, next),
             "bookItems": [
                 {
                     "id": "book-item-1",
-                    "rackId": "rack-17",
+                    "libId": "nyc-central-lib",
                     "isLent": true
                 }
             ]

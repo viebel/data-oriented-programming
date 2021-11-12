@@ -10,4 +10,4 @@ function searchBooksByTitle(catalogData, query) {
     return bookInfos;
 }
 
-searchBooksByTitle(_.get(libraryData, "catalog"), "Watchmen")
+searchBooksByTitle(catalogData, "Watchmen");

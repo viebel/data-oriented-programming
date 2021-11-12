@@ -1,0 +1,14 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "myNumber": {"type": "number"},
+      "myString": {"type": "string"},
+      "myEnum": {"enum": ["myVal", "yourVal"]},
+      "myBool": {"type": "boolean"}
+    },
+    "required": ["myNumber", "myString"],
+    "additionalProperties": false
+  }
+}

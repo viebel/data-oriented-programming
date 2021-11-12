@@ -6,10 +6,6 @@ class SystemData {
         return this.systemData;
     }
 
-    set(_systemData) {
-        this.systemData = _systemData;
-    }
-
     commit(previous, next) {
         var systemDataBeforeUpdate = this.systemData;
         if(!Consistency.validate(previous, next) {

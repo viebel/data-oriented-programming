@@ -6,18 +6,18 @@ var libraryData = {
             "978-1779501127": {
                 "isbn": "978-1779501127",
                 "title": "Watchmen",
-                "publicationYear": 1986,
+                "publicationYear": 1987,
                 "authorIds": ["alan-moore",
-                            "dave-gibbons"],
+                              "dave-gibbons"],
                 "bookItems": [
                     {
                         "id": "book-item-1",
-                        "rackId": "rack-17",
+                        "libId": "nyc-central-lib",
                         "isLent": true
                     },
                     {
                         "id": "book-item-2",
-                        "rackId": "rack-17",
+                        "libId": "nyc-central-lib",
                         "isLent": false
                     }
                 ]
@@ -37,4 +37,4 @@ var libraryData = {
     "userManagement": {
         // omitted for now
     }
-}
+};

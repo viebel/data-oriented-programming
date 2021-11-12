@@ -1,0 +1,14 @@
+[
+  {
+    "title": "7 Habits of Highly Effective People",
+    "available": true,
+    "isbn": "978-0812981605",
+    "dummy_property": 42
+  },
+  {
+    "title": "The Power of Habit",
+    "available": false,
+    "isbn": "978-1982137274",
+    "dummy_property": 45
+  }
+]

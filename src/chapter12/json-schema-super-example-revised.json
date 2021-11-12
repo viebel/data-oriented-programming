@@ -1,0 +1,38 @@
+{
+  "type": "array", // <1>
+  "items": {
+    "type": "object", // <2>
+    "properties": { // <3>
+      "myNumber": {"type": "number"}, // <4>
+      "myString": {"type": "string"}, // <5>
+      "myEnum": {"enum": ["myVal", "yourVal"]}, // <6>
+      "myBool": {"type": "boolean"} // <7>
+      "myAge": { // <8>
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 120
+      },
+      "myBirthday": { // <9>
+        "type": "string",
+        "format": "date"
+      },
+      "myLetters": { // <10>
+        "type": "string",
+        "pattern": "[a-zA-Z]*"
+      }
+      "myNumberMap": { // <11>
+        "type": "object",
+        "additionalProperties": {"type": "number"}
+      },
+      "myTuple": { // <12>
+        "type": "array",
+        "prefixItems": [
+          { "type": "string" },
+          { "type": "number" }
+        ]
+      }
+    },
+    "required": ["myNumber", "myString"], // <13>
+    "additionalProperties": false // <14>
+  }
+}

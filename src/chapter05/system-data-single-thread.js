@@ -10,9 +10,9 @@ class SystemData {
     }
 
     commit(previous, next) {
-        if(!SystemValidity.validate(previous, next) {
+        if(!SystemValidity.validate(previous, next)) {
             throw "The system data to be committed is not valid!";
-        });
+        };
         this.systemData = SystemConsistency.reconcile(this.systemData,
                                                       previous,
                                                       next);

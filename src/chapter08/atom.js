@@ -13,12 +13,12 @@ class Atom {
 
     swap(f) {
         while(true) {
-            var stateSnapshot = this.state;
-            var nextState = f(stateSnapshot);
-        }
-      if (!atomicCompareAndSet(this.state, stateSnapshot, nextState)) { // <1>
+          var stateSnapshot = this.state;
+          var nextState = f(stateSnapshot);
+          if (!atomicCompareAndSet(this.state, stateSnapshot, nextState)) { // <1>
             continue;
+          }
+          return nextState;
         }
-        return nextState;
     }
 }

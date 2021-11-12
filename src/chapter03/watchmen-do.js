@@ -6,12 +6,12 @@ var watchmenBook = {
     "bookItems": [
         {
             "id": "book-item-1",
-            "rackId": "rack-17",
+            "libId": "nyc-central-lib",
             "isLent": true
         },
         {
             "id": "book-item-2",
-            "rackId": "rack-17",
+            "libId": "nyc-central-lib",
             "isLent": false
         }
     ]
