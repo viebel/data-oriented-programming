@@ -1,13 +1,15 @@
-(ns practice.dop
+(ns dop 
   (:require [clojure.data.json :as json]
-            [clojure.string :as string]))
+            [clojure.string :as string]
+            [clojure.set :as set]
+            [clojure.data :as data]))
 
 (def file
   (slurp "resources/lib_data.json"))
 
 ;; The given data uses an email address as a key in certain places.
-;; Those are left as strings instead of keywords because Clojure 
-;; does not allow `@` in keywords.
+;; Those are left as strings because Clojure does not allow `@` in
+;; keywords.
 (defn parse-lib-data [lib-data]
   (json/read-str lib-data 
                  :key-fn (fn [k]
@@ -31,7 +33,7 @@
 
 (defn all-books [lib-data]
   (->> (get-in lib-data [:catalog :booksByIsbn])
-       (map val)))
+       (vals)))
 
 (defn book-info->json [book]
   (let [all-authors (get-in lib-data [:catalog :authorsById])
@@ -45,12 +47,12 @@
        :authors authors})))
 
 (defn book-info [lib-data title]
-  (let [title (.toLowerCase title)
+  (let [title (string/lower-case title)
         books (all-books lib-data)
-        matches (for [book books
-                      :let [book-title (.toLowerCase (:title book))]
-                      :when (string/includes? book-title title)]
-                  book)]
+        matches (filter (fn [book]
+                          (let [book-title (string/lower-case (:title book))]
+                            (string/includes? book-title title)))
+                        books)] 
     (map book-info->json matches)))
 
 ;; (book-info lib-data "watch") ;; ("{\"title\":\"Watchmen\",\"isbn\":\"978-1779501127\",\"authors\":[\"Alan Moore\",\"Dave Gibbons\"]}")
@@ -62,23 +64,22 @@
   (assoc-in lib-data [:userManagement :members email :isBlocked] true))
 
 ;; (block-member lib-data "samantha@gmail.com")
-;; => ... {:userManagement {:members {"samantha@gmail.com" {:isBlocked true}}}})
     
 
 ;; Challenge #4:
 
 ;; Clojure std library contains this function: `clojure.set/rename-keys`.
-;; (clojure.set/rename-keys {:a 1 :b 2} {:a :new-a :b :new-b}) ;; {:new-a 1, :new-b 2}
+;; (set/rename-keys {:a 1 :b 2} {:a :new-a :b :new-b}) ;; {:new-a 1, :new-b 2}
 
 
 ;; Challenge #5:
 
-(defn api-url [isbn]
-  (str "https://openlibrary.org/isbn/" isbn ".json"))
-
 (def example-isbn "978-1779501127")
+(def api-url
+  (str "https://openlibrary.org/isbn/" example-isbn ".json"))
+
 (def api-data-example
-  (parse-lib-data (slurp (api-url example-isbn))))
+  (parse-lib-data (slurp api-url)))
 (def lib-data-example
   (get-in lib-data [:catalog :booksByIsbn (keyword example-isbn)]))
 
@@ -93,7 +94,7 @@
 
 ;; Clojure std library contains this function: `clojure.data/diff`.
 ;; (butlast 
-;;   (clojure.data/diff lib-data (block-member lib-data "samantha@gmail.com")))
+;;   (data/diff lib-data (block-member lib-data "samantha@gmail.com")))
 ;;
 ;; => ({:userManagement {:members {"samantha@gmail.com" {:isBlocked false}}}}
 ;; =>  {:userManagement {:members {"samantha@gmail.com" {:isBlocked true}}}})
