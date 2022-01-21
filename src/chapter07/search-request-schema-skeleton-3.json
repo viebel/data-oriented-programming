@@ -13,7 +13,8 @@
           "subjects",
           "publish_date",
           "physical_dimensions"
-        ]}
+        ]
+      }
     }
   }
 }

@@ -19,7 +19,7 @@ var openLibBookInfos = [
     "number_of_pages": 432,
   },
   {
-    "isbn_13": "978-1982137274",
+    "isbn": "978-1982137274",
     "title": "The Power of Habit",
     "subtitle": "Why We Do What We Do in Life and Business",
     "subjects": [

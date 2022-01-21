@@ -1,4 +1,4 @@
-class SystemData {
+class SystemState {
   systemData;
 
   get() {

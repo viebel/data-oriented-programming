@@ -1,9 +1,9 @@
 Author.prolificityLevel = function(author) {
-  var books = _.count(_.get(author, "bookIsbns"));
-  if (author.books <= 10) {
+  var books = _.size(_.get(author, "bookIsbns"));
+  if (books <= 10) {
     return "low";
   };
-  if (author.books >= 51) {
+  if (books >= 51) {
     return "high";
   }
   return "medium";
@@ -20,12 +20,12 @@ var authorNameArgsSchema = {
 function authorNameDispatch(author, format) {
   if(dev()) {
     if(!ajv.validate(authorNameArgsSchema, [author, format])) {
-      throw ("Author.name called with invalid arguments: " + ajv.errorsText(ajv.errors));
+      throw ("Author.myName called with invalid arguments: " + ajv.errorsText(ajv.errors));
     }
   }
 
   return [Author.prolificityLevel(author), format];
 };
 
-Author.name = multi(authorNameDispatch);
+Author.myName = multi(authorNameDispatch);
 

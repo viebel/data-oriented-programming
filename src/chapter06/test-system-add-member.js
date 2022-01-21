@@ -36,7 +36,7 @@ var expectedLibraryStateAfter = {
 
 
 var systemState = new SystemState(); // <1>
-systemState.set(libraryStateBefore); // <2>
+systemState.commit(null, libraryStateBefore); // <2>
 System.addMember(systemState, jessie); // <3>
 
 _.isEqual(systemState.get(), expectedLibraryStateAfter); // <4>

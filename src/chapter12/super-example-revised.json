@@ -1,7 +1,7 @@
 [
   {
     "myNumber": 42,
-    "myString": "Hello",
+    "myString": "I-love-you",
     "myEnum": "myVal",
     "myBool": true,
     "myTuple": ["Hello", 42]
@@ -11,7 +11,7 @@
     "myString": "Happy",
     "myAge": 42,
     "myBirthday": "1978-11-23",
-    "myLetters": "I-love-you",
+    "myLetters": "Hello",
     "myNumberMap": {
       "banana": 23,
       "apple": 34

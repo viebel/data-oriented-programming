@@ -1,10 +1,10 @@
 function searchBooksTest () {
-  var randomData = JSONSchemaFaker(searchBooksArgsSchema);
+  var catalogRandom = JSONSchemaFaker.generate(catalogSchema);
+  var queryRandom = JSONSchemaFaker.generate({ "type": "string" });
   try {
-    Catalog.searchBooksByTitle.apply(null, randomData);
+    Catalog.searchBooksByTitle(catalogRandom, queryRandom);
     return true;
   } catch (error) {
-    console.log(error);
     return false;
   }
 }

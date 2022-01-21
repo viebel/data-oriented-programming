@@ -1,4 +1,4 @@
-class SystemData {
+class SystemState {
     systemData;
     previousSystemData;
 
@@ -8,9 +8,9 @@ class SystemData {
 
     commit(previous, next) {
         var systemDataBeforeUpdate = this.systemData;
-        if(!Consistency.validate(previous, next) {
+        if(!Consistency.validate(previous, next)) {
             throw "The system data to be committed is not valid!";
-        });
+        }
         this.systemData = next;
         this.previousSystemData = systemDataBeforeUpdate;
     }

@@ -1,8 +1,8 @@
 class Library {
-    static addBookItem(libraryData, userId, bookItemData) {
+    static addBookItem(libraryData, userId, bookItemInfo) {
         if(UserManagement.isLibrarian(libraryData.userManagement, userId) ||
            UserManagement.isVIPMember(libraryData.userManagement, userId)) {
-            return Catalog.addBookItem(libraryData.catalog, bookItemData);
+            return Catalog.addBookItem(libraryData.catalog, bookItemInfo);
         } else {
             throw "Not allowed to add a book item"; // <1>
         }

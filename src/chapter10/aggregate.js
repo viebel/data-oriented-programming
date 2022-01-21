@@ -1,6 +1,6 @@
 function aggregateFields(rows, idFieldName, fieldName, aggregateFieldName) {
   var groupedRows = _.values(_.groupBy(rows, idFieldName));
-  return _.map(bookInfos, function(groupedRows) {
+  return _.map(groupedRows, function(groupedRows) {
     return aggregateField(groupedRows, fieldName, aggregateFieldName);
   });
 }
@@ -41,8 +41,8 @@ var expectedResults =
     ];
 
 
-_.isEqual(aggregateFields(searchResults,
+_.isEqual(aggregateFields(sqlRows,
                           "isbn",
                           "author_name",
                           "authorNames"),
-          expectedResults);
+          expectedResults);         

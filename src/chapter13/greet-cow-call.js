@@ -1,2 +1,8 @@
+greet(myDog);
+// → "Woof woof! My name is Fido"
+
+greet(myCat);
+// → "Meow! I am Milo"
+
 greet(myCow);
-// It displays "Moo! Call me Clarabelle"
+// → "Moo! Call me Clarabelle"

@@ -1,24 +1,18 @@
-Author.fullName = function(author) {
-  var firstName = _.get(author, "firstName");
-  var lastName = _.get(author, "lastName");
-  return firstName +  " " + lastName;
-};
-
 function authorNameLowHtml(author, format) {
-  return Author.fullName(author);
+  return "<i>" + _.get(author, "name") + "</i>";
 }
 
-Author.name = method(["low", "html"], authorNameLowHtml)(Author.name);
+Author.myName = method(["low", "html"], authorNameLowHtml)(Author.myName);
 
 function authorNameMediumHtml(author, format) {
-  return "<i>" + Author.fullName(author) + "</i>";
+  return "<b>" + _.get(author, "name") + "</b>";
 }
 
-Author.name = method(["medium", "html"], authorNameMediumHtml)(Author.name);
+Author.myName = method(["medium", "html"], authorNameMediumHtml)(Author.myName);
 
 function authorNameHighHtml(author, format) {
-  return "<b><i>" + Author.fullName(author) + "</i></b>";
+  return "<b><i>" + _.get(author, "name") + "</i></b>";
 }
 
-Author.name = method(["high", "html"], authorNameHighHtml)(Author.name);
+Author.myName = method(["high", "html"], authorNameHighHtml)(Author.myName);
 

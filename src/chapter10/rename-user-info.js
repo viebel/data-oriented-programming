@@ -10,7 +10,7 @@ var listOfMaps = [
 ];
 
 
-var results = renameResultKeys(listOfMaps,
-                               {"email": "userEmail"});
+renameResultKeys(listOfMaps,
+  {"email": "userEmail"});
 
 

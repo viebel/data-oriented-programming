@@ -6,6 +6,4 @@ var member = {
 
 _.at(member,
      ["email", "encryptedPassword"]);
-
-// ["samantha@gmail.com",
-//  "c2VjcmV0"]
+// → ["samantha@gmail.com", "c2VjcmV0"]

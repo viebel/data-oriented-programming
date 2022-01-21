@@ -1,6 +1,4 @@
 var libraryData = {
-    "name": "The smallest library on earth",
-    "address": "Here and now",
     "catalog": {
         "booksByIsbn": {
             "978-1779501127": {
@@ -33,8 +31,5 @@ var libraryData = {
                 "bookIsbns": ["978-1779501127"]
             }
         }
-    },
-    "userManagement": {
-        // omitted for now
     }
 };

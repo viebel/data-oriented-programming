@@ -6,25 +6,12 @@
       "authorIds": [
         "vfbzqahmuemgdegkzntfhzcjhjrbgfoljfzogfuqweggchum",
         "inxmqh-",
-        "hqpx-xykggvoptnspk-gnibjlmeqlqhjhhixopfitrptbzyzla"
       ],
       "bookItems": {
         "ullamco5": {
           "id": "f7dac8c3-E59D-bc2E-7B33-C27F3794E2d6",
           "libId": "4jtbj7q7nrylfu114m",
           "purchaseDate": "2001-08-01",
-          "isLent": false
-        },
-        "aliquip0e": {
-          "id": "3dD093CE-c7cF-f8Cd-EDCc-DFaC2f7ADeaA",
-          "libId": "i8nyto1vtrpm",
-          "purchaseDate": "1949-05-27",
-          "isLent": false
-        },
-        "officiab9": {
-          "id": "E5Df96Bf-Cb4F-B8a5-Cd4E-F4e693C90f43",
-          "libId": "nc9rxuam6r4-i0z",
-          "purchaseDate": "2010-06-15",
           "isLent": false
         },
         "culpa_3e": {
@@ -40,25 +27,13 @@
     "aliquip_d7": {
       "title": "aute",
       "isbn": "348782167518177",
-      "authorIds": [
-        "owfgtdxjbiidsobfgvjpjlxuabqpjhdcqmmmrjb-ezrsz-u",
-        "xxzh-zoarsaripuflceyvemimcwbjs",
-        "qlirgiznuvwnbmqbenjrormzkvcjpaztqjekrtjhbis",
-        "taonkflmhj-sdrpzclx-usuxrv-rnrr-qd-sqs",
-        "pzgeuytdppzxdfdl-vjp"
-      ],
+      "authorIds": ["owfgtdxjbiidsobfgvjpjlxuabqpjhdcqmmmrjb-ezrsz-u"],
       "bookItems": {
         "ipsum__0b": {
           "id": "6DfE93ca-DB23-5856-56Fd-82Ab8CffEFF5",
           "libId": "bvjh0p2p2666vs7dd",
           "purchaseDate": "2018-03-30",
           "isLent": false
-        },
-        "sed5a": {
-          "id": "25F376ee-47dd-e7Ca-BcFB-cc1482ad8d5C",
-          "libId": "1mnpzrm--km4rt8xo9",
-          "purchaseDate": "1998-06-10",
-          "isLent": true
         }
       },
       "publisher": "ea anim ut ex id",
@@ -66,29 +41,12 @@
     }
   },
   "authorsById": {
-    "veniam_860": {
-      "id": "in ut Lorem elit",
-      "name": "mollit nostrud dolore tempor aliqua",
-      "bookIsbns": [
-        "655308078209036",
-        "165593829786-"
-      ]
-    },
     "labore_b88": {
       "id": "adipisicing nulla proident",
       "name": "culpa in minim",
       "bookIsbns": [
         "6243029--7",
         "5557199424742986"
-      ]
-    },
-    "exercitation_1_": {
-      "id": "officia cillum",
-      "name": "anim fugiat sed reprehenderit",
-      "bookIsbns": [
-        "63652-149769-",
-        "2016-56--39918",
-        "903202535-"
       ]
     },
     "ut_dee": {

@@ -1,0 +1,2 @@
+Catalog.searchBooksByTitle(catalogData, 'Habit');
+// → []

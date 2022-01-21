@@ -1,4 +1,4 @@
-CatalogData.searchBooksByTitle = function(catalogData, query) {
+Catalog.searchBooksByTitle = function(catalogData, query) {
   var allBooks = _.get(catalogData, "booksByIsbn");
   var queryLowerCased = query.toLowerCase(); // <1>
   var matchingBooks = _.filter(allBooks, function(book) {

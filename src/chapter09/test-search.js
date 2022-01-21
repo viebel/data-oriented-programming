@@ -27,5 +27,12 @@ var bookInfo = Immutable.fromJS({
                   "Dave Gibbons"]
 });
 
-Immutable.isEqual(Catalog.searchBooksByTitle(catalogData, "Watchmen"), Immutable.fromJS([bookInfo]));
-Immutable.isEqual(Catalog.searchBooksByTitle(catalogData, "Batman"), Immutable.fromJS([]));
+Immutable.isEqual(
+  Catalog.searchBooksByTitle(catalogData, "Watchmen"), 
+  Immutable.fromJS([bookInfo]));
+// → true
+
+Immutable.isEqual(
+  Catalog.searchBooksByTitle(catalogData, "Batman"), 
+  Immutable.fromJS([]));
+// → true

@@ -1,2 +1,3 @@
 Library.searchBooksByTitleJSON(libraryData, "Watchmen");
-// returns "[{\"title\":\"Watchmen\",\"isbn\":\"978-1779501127\",\"authorNames\":[\"Alan Moore\",\"Dave Gibbons\"]}]"
+// → "[{\"title\":\"Watchmen\",\"isbn\":\"978-1779501127\",
+// → \"authorNames\":[\"Alan Moore\",\"Dave Gibbons\"]}]"

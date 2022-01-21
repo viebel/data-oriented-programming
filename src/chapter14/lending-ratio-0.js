@@ -7,7 +7,8 @@ function lendingRatio(books) {
       lent = lent + 1;
     } else {
       notLent = notLent + 1;
-    });
+    }
+  });
   return lent/(lent + notLent);
 }
 

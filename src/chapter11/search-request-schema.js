@@ -5,7 +5,7 @@ var searchBooksRequestSchema = {
     "fields": {
       "type": "array",
       "items": {
-        "type": [
+        "enum": [
           "title",
           "full_title",
           "subtitle",

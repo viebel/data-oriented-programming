@@ -1,4 +1,4 @@
-var rows = [
+var rows7Habits = [
   {
     "author_name": "Sean Covey",
     "isbn": "978-1982137274",
@@ -11,7 +11,7 @@ var rows = [
   }
 ];
 
-var authorNames = _.map(rows, "author_name"); // <1>
-var firstRow = _.nth(rows, 0);
+var authorNames = _.map(rows7Habits, "author_name"); // <1>
+var firstRow = _.nth(rows7Habits, 0);
 var bookInfoWithAuthorNames = _.set(firstRow, "authorNames", authorNames);
-var bookInfo = _.omit(bookInfoWithAuthorNames, "author_name"); // <2>
+_.omit(bookInfoWithAuthorNames, "author_name"); // <2>

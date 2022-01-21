@@ -16,4 +16,5 @@ var searchBooksRequest = {
 };
 
 
-validate(searchBooksRequestSchema, searchBooksRequest); // it returns true
+validate(searchBooksRequestSchema, searchBooksRequest);
+// → true

@@ -16,4 +16,4 @@ var sqlRows = [
   }
 ];
 
-var rowsByIsbn = _.groupBy(sqlRows, "isbn");
+_.groupBy(sqlRows, "isbn");

@@ -1,20 +1,11 @@
 var library = {
-    "name": "The smallest library on earth",
-    "address": "Here and now",
     "catalog": {
         "booksByIsbn": {
             "978-1779501127": {
                 "isbn": "978-1779501127",
                 "title": "Watchmen",
                 "publicationYear": 1987,
-                "authorIds": ["alan-moore", "dave-gibbons"],
-                "bookItems": [
-                    {
-                        "id": "book-item-1",
-                        "libId": "nyc-central-lib",
-                        "isLent": true
-                    }
-                ]
+                "authorIds": ["alan-moore", "dave-gibbons"]
             }
         },
         "authorsById": {
@@ -27,8 +18,5 @@ var library = {
                 "bookIsbns": ["978-1779501127"]
             }
         }
-    },
-    "userManagement": {
-        // omitted for now
     }
-}
+};

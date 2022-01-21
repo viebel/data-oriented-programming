@@ -15,3 +15,4 @@ var expectedResult = [
 ];
 
 _.isEqual(result, expectedResult);
+// → false

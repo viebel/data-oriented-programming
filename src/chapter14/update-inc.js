@@ -5,5 +5,4 @@ var m = {
 update(m, "income", function(x) {
     return x * 2;
 });
-// {"position": "manager", 
-//  "income": 200000}
+// → {"position": "manager", "income": 200000}

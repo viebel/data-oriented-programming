@@ -1,4 +1,4 @@
-class SystemData {
+class SystemState {
   systemData;
 
   constructor() {
@@ -9,7 +9,7 @@ class SystemData {
     return this.systemData.get();
   }
 
-  set(data) {
-    this.systemData.set(data);
+  commit(prev, next) {
+    this.systemData.set(next);
   }
 }

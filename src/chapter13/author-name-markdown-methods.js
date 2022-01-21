@@ -1,17 +1,17 @@
 function authorNameLowMarkdown(author, format) {
-  return Author.fullName(author);
+  return "*" + _.get(author, "name") + "*";
 }
 
-Author.name = method(["low", "markdown"], authorNameLowMarkdown)(Author.name);
+Author.myName = method(["low", "markdown"], authorNameLowMarkdown)(Author.myName);
 
 function authorNameMediumMarkdown(author, format) {
-  return "**" + Author.fullName(author) + "**";
+  return "**" + _.get(author, "name") + "**";
 }
 
-Author.name = method(["medium", "markdown"], authorNameMediumMarkdown)(Author.name);
+Author.myName = method(["medium", "markdown"], authorNameMediumMarkdown)(Author.myName);
 
 function authorNameHighMarkdown(author, format) {
-  return "***" + Author.fullName(author) + "***";
+  return "***" + _.get(author, "name") + "***";
 }
 
-Author.name = method(["high", "markdown"], authorNameHighMarkdown)(Author.name);
+Author.myName = method(["high", "markdown"], authorNameHighMarkdown)(Author.myName);

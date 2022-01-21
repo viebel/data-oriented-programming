@@ -2,6 +2,12 @@ function greetLangDogEn(animal, language) {
   console.log("Woof woof! My name is " + animal.name + " and I speak " + language.name);
 }
 
+greetLang = method(["dog", "en"], greetLangDogEn)(greetLang);
+
+function greetLangDogFr(animal, language) {
+  console.log("Ouaf Ouaf! Je m'appelle " + animal.name + " et je parle " + language.name);
+}
+
 greetLang = method(["dog", "fr"], greetLangDogFr)(greetLang);
 
 function greetLangCatEn(animal, language) {

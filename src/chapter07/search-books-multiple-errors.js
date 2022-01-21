@@ -17,8 +17,11 @@ var invalidSearchBooksRequest = { // <1>
 
 var ajv = new Ajv({allErrors: true}); // <2>
 
-ajv.validate(searchBooksRequestSchema, invalidSearchBooksRequest);
+ajv.validate(searchBooksRequestSchema, 
+             invalidSearchBooksRequest);
 
 ajv.errorsText(ajv.errors); // <3>
-// "data must have required property 'title', data/fields/0 must be string, data/fields/1 must be string"
+// → "data must have required property 'title', 
+// →  data/fields/0 must be string, 
+// →  data/fields/1 must be string"
 

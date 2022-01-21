@@ -1,4 +1,4 @@
-class SystemData {
+class SystemState {
     systemData;
 
     get() {
@@ -10,11 +10,12 @@ class SystemData {
     }
 
     commit(previous, next) {
-        if(!SystemValidity.validate(previous, next)) {
+        var nextSystemData = SystemConsistency.reconcile(this.systemData, // <1>
+            previous,
+            next);
+        if(!SystemValidity.validate(previous, nextSystemData)) {
             throw "The system data to be committed is not valid!";
         };
-        this.systemData = SystemConsistency.reconcile(this.systemData,
-                                                      previous,
-                                                      next);
+        this.systemData = nextSystemData;
     }
 }

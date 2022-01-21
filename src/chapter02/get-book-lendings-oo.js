@@ -1,7 +1,8 @@
 class Library {
-    libraryData // state of the object
+    catalog 
+    userManagement
 
     getBookLendings(userId, memberId) {
-        // accesses library data via this.libraryData
+        // accesses library state via this.catalog and this.userManagement
     }
 }

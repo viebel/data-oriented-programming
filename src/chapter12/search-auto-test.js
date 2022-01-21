@@ -1,2 +1,5 @@
-var randomData = JSONSchemaFaker(searchBooksArgsSchema);
-Catalog.searchBooksByTitle.apply(null, randomData);
+function searchBooksTest () {
+  var catalogRandom = JSONSchemaFaker.generate(catalogSchema);
+  var queryRandom = JSONSchemaFaker.generate({ "type": "string" });
+  Catalog.searchBooksByTitle(catalogRandom, queryRandom);   
+}

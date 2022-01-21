@@ -1,12 +1,3 @@
-Immutable.getDirect = Immutable.get;
-
-Immutable.get = function(coll, path) {
-  if (typeof(path) == "string") {
-    return Immutable.getDirect(coll, path);
-  }
-  return Immutable.getIn(coll, path);
-};
-
 Immutable.map = function(coll, f) {
   return coll.map(f);
 };

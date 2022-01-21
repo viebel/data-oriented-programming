@@ -8,6 +8,6 @@ var expectedResults = {
 };
 
 _.isEqual(expectedResults,
-          aggregateField(rows,
+          aggregateField(rows7Habits,
                          "author_name",
                          "authorNames"));

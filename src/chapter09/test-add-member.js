@@ -32,3 +32,4 @@ var expectedUserManagementStateAfter = Immutable.fromJS({
 
 var result = UserManagement.addMember(userManagementStateBefore, jessie);
 Immutable.isEqual(result, expectedUserManagementStateAfter);
+// → true

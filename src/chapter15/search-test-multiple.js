@@ -15,4 +15,5 @@ var expectedResult = [
 _.every(queries, function(query) {
     var result = Catalog.searchBooksByTitle(catalogData, query);
     return _.isEqual(result, expectedResult);
-})
+});
+// → [true, true, true, true]

@@ -4,4 +4,5 @@ var invalidSearchBooksRequest = {
 };
 
 
-validate(searchBooksRequestSchema, invalidSearchBooksRequest); // it returns false
+validate(searchBooksRequestSchema, invalidSearchBooksRequest); 
+// → false

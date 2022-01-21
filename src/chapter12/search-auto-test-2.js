@@ -1,14 +1,14 @@
 function searchBooksTest () {
-  var randomData = JSONSchemaFaker(searchBooksArgsSchema);
+  var catalogRandom = JSONSchemaFaker.generate(catalogSchema);
+  var queryRandom = JSONSchemaFaker.generate({ "type": "string" });
   try {
-    var catalogData = randomData[0];
-    var book = _.values(_.get(catalogData, "booksByIsbn"))[0];
-    randomData[1] = _.get(book, "title").substring(0,1);
-    var res = Catalog.searchBooksByTitle.apply(null, randomData);
+    var firstBook = _.values(_.get(catalogRandom, "booksByIsbn"))[0];
+    var query = _.get(firstBook, "title").substring(0,1);
+    Catalog.searchBooksByTitle(catalogRandom, query);
     return true;
   } catch (error) {
     console.log(error);
-    console.log(res);
     return false;
   }
 }
+

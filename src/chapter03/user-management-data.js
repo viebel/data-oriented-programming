@@ -1,12 +1,11 @@
-
 var userManagementData = {
-    "librarians": {
+    "librariansByEmail": {
         "franck@gmail.com" : {
             "email": "franck@gmail.com",
             "encryptedPassword": "bXlwYXNzd29yZA==" //<1>
         }
     },
-    "members": {
+    "membersByEmail": {
         "samantha@gmail.com": {
             "email": "samantha@gmail.com",
             "encryptedPassword": "c2VjcmV0", //<2>

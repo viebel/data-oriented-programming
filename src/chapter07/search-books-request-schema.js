@@ -13,7 +13,8 @@ var searchBooksRequestSchema = {
           "subjects",
           "publish_date",
           "physical_dimensions"
-        ]}
+        ]
+      }
     }
   },
   "required": ["title", "fields"]

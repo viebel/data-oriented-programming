@@ -20,7 +20,7 @@ var data2 = Immutable.fromJS({
   w: [4]
 });
 
-Immutable.isEqual(DataDiff.diff(data1, data2),
+Immutable.isEqual(diff(data1, data2),
              Immutable.fromJS({
                "w":  [
                  4

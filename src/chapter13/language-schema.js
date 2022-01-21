@@ -2,7 +2,7 @@ var languageSchema = {
   "type": "object",
   "properties": {
     "name": {"type": "string"},
-    "type": {"enum": ["fr", "en"]}
+    "type": {"type": "string"}
   },
   "required": ["name", "type"],
 };
