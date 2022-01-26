@@ -25,7 +25,7 @@ class ChallengeTestCase(TestCase):
 		self.assertEqual(result, expected)
 
 	def test_merge_and_serialize(self):
-		expected = {"isbn": "978-1779501127", "title": "Watchmen", "publicationYear": 1987, "authorIds": ["alan-moore", "dave-gibbons"], "bookItems": [{"id": "book-item-1", "rackId": "rack-17", "isLent": True}, {"id": "book-item-2", "rackId": "rack-17", "isLent": False}], "publishers": ["DC Comics"], "number_of_pages": 334, "weight": "1.4 pounds", "physical_format": "Paperback", "subjects": ["Graphic Novels", "Comics & Graphic Novels", "Fiction", "Fantastic fiction"], "isbn_13": ["9780930289232"], "isbn_10": ["0930289234"], "publish_date": "April 1, 1995", "physical_dimensions": "10.1 x 6.6 x 0.8 inches"}
+		expected = {'isbn': '978-1779501127', 'title': 'Watchmen', 'publicationYear': 1987, 'authorIds': ['alan-moore', 'dave-gibbons'], 'bookItems': [{'id': 'book-item-1', 'rackId': 'rack-17', 'isLent': True}, {'id': 'book-item-2', 'rackId': 'rack-17', 'isLent': False}], 'publishers': ['DC Comics'], 'number_of_pages': 334, 'weight': '1.4 pounds', 'physical_format': 'Paperback', 'subjects': ['Graphic Novels', 'Comics & Graphic Novels', 'Fiction', 'Fantastic fiction'], 'isbn_13': ['9780930289232'], 'isbn_10': ['0930289234'], 'publish_date': 'April 1, 1995', 'physical_dimensions': '10.1 x 6.6 x 0.8 inches'}
 		result = json.loads(merge_and_serialize(watchmen_from_db, watchmen_from_openlib))
 		self.assertEqual(result, expected)
 
