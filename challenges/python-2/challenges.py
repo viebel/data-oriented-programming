@@ -1,5 +1,6 @@
 import json
 from deepdiff import DeepDiff
+from mergedeep import merge
 from pydash import py_
 from toolz.dicttoolz import assoc_in
 
@@ -49,11 +50,8 @@ def rename_keys(data: object, key_map: object) -> object:
 # Write a function named `mergeAndSerialize` that receives two pieces of book information, one from the database
 # and one from an external service like [Open Library Books API](https://openlibrary.org/dev/docs/api/books)
 # and returns a JSON string with information from both sources.
-def merge_and_serialize(d1: dict, d2: dict):
+def merge_and_serialize(d1: dict, d2: dict) -> str:
 	return json.dumps(merge(d1, d2))
-
-def merge(d1: dict, d2: dict) -> dict:
-	return {**d1 , **d2}
 
 
 ## Challenge #6: Compare versions of data
