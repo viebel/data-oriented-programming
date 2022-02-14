@@ -50,17 +50,7 @@ var libraryData = {
                 "title": "Watchmen",
                 "publicationYear": 1987,
                 "authorIds": ["alan-moore",
-                              "dave-gibbons"],
-                "bookItems": [
-                    {
-                        "id": "book-item-1",
-                        "rackId": "rack-17"
-                    },
-                    {
-                        "id": "book-item-2",
-                        "rackId": "rack-17"
-                    }
-                ]
+                              "dave-gibbons"]
             }
         },
         "authorsById": {
