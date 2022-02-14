@@ -106,20 +106,20 @@ var libraryData = {
 
 **Remark**: You are not allowed to extract author names from author ids. Assume that author ids are opaque strings.
 
-# Challenge #3: Add a piece of information
+## Challenge #3: Add a piece of information
 
 **Challenge**: Write a function named `blockMember` that receives an email address and returns a new version of library data **without altering the original version**, where the user with the given email is blocked.
 
 
-# Challenge #4: Rename keys in a data entity
+## Challenge #4: Rename keys in a data entity
 
 **Challenge**: Write a function named `renameKeys` that receives a data entity and a key mappings and returns a new data entity, without altering the original entity, where the fields are renamed according to the key mappings
 
-# Challenge #5: Merge pieces of information
+## Challenge #5: Merge pieces of information
 
 **Challenge**: Write a function named `mergeAndSerialize` that receives two pieces of book information, one from the database and one from an external service like [Open Library Books API](https://openlibrary.org/dev/docs/api/books) and returns a JSON string with information from both sources.
 
-# Challenge #6: Compare versions of data
+## Challenge #6: Compare versions of data
 
 **Challenge**: Write a function named `diff` that receives two versions of library data and returns an object that contains the diff between the two versions, in the format of your choice.
 
