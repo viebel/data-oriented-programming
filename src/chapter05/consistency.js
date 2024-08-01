@@ -2,7 +2,7 @@ class SystemConsistency {
     static threeWayMerge(current, previous, next) {
         var previousToCurrent = diff(previous, current); // <1> 
         var previousToNext = diff(previous, next);
-        if(havePathInCommon(previousToCurrent, previousToNext)) {
+        if(!havePathInCommon(previousToCurrent, previousToNext)) {
             return _.merge(current, previousToNext);
         }
         throw "Conflicting concurrent mutations.";
