@@ -177,9 +177,71 @@ let watchmenFromOpenLib = {
 challenge5: json.Compact(json.Marshal({watchmenFromDB, watchmenFromOpenLib}))
 
 //> cue eval -e challenge6 challenges.cue
+#comparable: bytes | string | bool | number | null
 
-challenge6: {
-    // taken from challenge 3
-    let updatedLibrary = (#blockMember & {email: "samantha@gmail.com"}).result
-    // work in progress...
+#list: [..._]
+
+#struct: {_: _}
+
+#equal: {
+    a: _
+    b: _
+    result: *false | true
+    if (a & #comparable) != _|_ && (b & #comparable) != _|_ {
+        if (a & b) != _|_ {result: true}
+    }
+    if (a & #list) != _|_ && (b & #list) != _|_ {
+        if len(a) == len(b) {
+            // return first of [all false-matches followed by true]
+            result: ([for i, av in a if !(#equal & {a: av, b: b[i]}).result {false}] + [true])[0]
+        }
+    }
+    if (a & #struct) != _|_ && (b & #struct) != _|_ {
+        // struct check, first check for equal number of fields using len
+        if len(a) == len(b) {
+            // as field number is the same, only check a[k] == b[k]
+            // if result is not yet false
+            let cmp = b
+            result: false | *true
+            for ak, av in a if (result & true) != _|_ {
+                let isequal = (#equal & {a: av, b: cmp[ak]}).result
+                if !isequal {result: false}
+            }
+        }
+    }
+}
+
+#diff: {
+    a: _
+    b: _
+    result: *{} | _
+    if (a & #comparable) != _|_ {
+        if (b & #comparable) != _|_ {
+            // union == bottom means a != b
+            // even if a and b a different types
+            if (a & b) == _|_ {result: b}
+        }
+    }
+    if (a & #list) != _|_ {
+        if (b & #list) != _|_ {
+            if !(#equal & {a: a, b: b}).result {result: b}
+        }
+    }
+    if (a & #struct) != _|_ {
+        if (b & #struct) != _|_ {
+            result: *{} | {_: _}
+            // as used in reference implementation on website:
+            // only compares for changes and additions from a to b; missing keys are ignored
+            for kb, vb in b if !(#equal & {a: a[kb], b: vb}).result {
+                let diffv = (#diff & {a: a[kb], b: vb}).result
+                if len(diffv) != 0 {result: [kb]: diffv}
+            }
+        }
+    }
+}
+
+// does not work, but this is my current state
+challenge6_wip: {
+    let updatedLibraryData = (#blockMember & {email: "samantha@gmail.com"}).result
+    (#diff & {a: libraryData, b: updatedLibraryData}).result
 }
